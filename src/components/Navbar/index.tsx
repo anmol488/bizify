@@ -56,7 +56,7 @@ const Navbar: React.FC = ({}) => {
               <CreateCommunityModal
                 isOpen={isOpen}
                 handleClose={onClose}
-                userId={user?.uid}
+                userId={user?.uid!}
               />
             </ModalBody>
           </ModalContent>
