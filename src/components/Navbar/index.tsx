@@ -26,11 +26,7 @@ import router from "next/router";
 import CreateCommunityModal from "../Modal/CreateCommunity";
 import Link from "next/link";
 
-type RightContentProps = {
-  user1: User;
-};
-
-const Navbar: React.FC<RightContentProps> = ({ user1 }) => {
+const Navbar: React.FC = ({}) => {
   const [user] = useAuthState(auth);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -50,7 +46,7 @@ const Navbar: React.FC<RightContentProps> = ({ user1 }) => {
         <Link href="/">
           <Image src="/images/ImageLogo1.png" height="40px" mr={5} />
         </Link>
-        {user1 ? (<div onClick={onOpen}>Create Topic</div>) : ("") }
+        <div onClick={onOpen}>Create Topic</div>
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
